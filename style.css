@@ -1,80 +1,135 @@
-/* Reset para remover margens e paddings padrão */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-/* Definir o fundo para toda a página */
-body {
     font-family: Arial, sans-serif;
-    text-align: center;
-    background: url('banner.png') no-repeat center center fixed;
-    background-size: cover;
-    color: white;
-    margin: 0;
-    padding: 0;
-    position: relative;
 }
 
-/* Melhorar a legibilidade com um efeito de escurecimento */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Escurece ligeiramente o fundo */
-    z-index: -1;
-}
-
-/* Ajustar o cabeçalho sem fundo separado */
+/* Cabeçalho */
 header {
-    padding: 60px 20px;
-    text-align: center;
-    background: none; /* Remove qualquer fundo no header */
+    background: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f0f0f0;
 }
 
-/* Logótipo */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .logo {
-    width: 150px;
+    width: 120px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: #f8f9fa;
+}
+
+.hero h1 {
+    font-size: 36px;
+    color: #333;
     margin-bottom: 10px;
 }
 
-/* Container de botões */
+.hero p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Botões */
 .button-container {
-    margin: 30px auto;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
     gap: 15px;
 }
 
-/* Botões principais */
 .btn {
-    background-color: #007bff;
+    background: #007bff;
     color: white;
     text-decoration: none;
     padding: 12px 20px;
     border-radius: 5px;
-    font-size: 18px;
-    width: 250px;
-    text-align: center;
-    transition: all 0.3s ease;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    transition: all 0.3s;
 }
 
 .btn:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
+    background: #0056b3;
+}
+
+.btn-outline {
+    border: 2px solid #007bff;
+    color: #007bff;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.btn-outline:hover {
+    background: #007bff;
+    color: white;
+}
+
+/* Serviços */
+.services {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 20px;
+    background: white;
+    text-align: center;
+}
+
+.service img {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+.service h2 {
+    font-size: 20px;
+    color: #333;
+}
+
+.service p {
+    font-size: 16px;
+    color: #666;
 }
 
 /* Rodapé */
 footer {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 20px;
-    margin-top: 30px;
     text-align: center;
+    padding: 20px;
+    background: #f8f9fa;
+    color: #333;
+    margin-top: 20px;
 }

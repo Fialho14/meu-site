@@ -52,9 +52,30 @@ nav ul li a:hover {
 }
 
 /* Hero Section */
+/* Hero Section com imagem de fundo desfocada */
 .hero {
-    background: linear-gradient(to bottom, #007bff, #0056b3);
+    background: linear-gradient(to bottom, rgba(222, 224, 228, 0.8), rgba(0, 86, 179, 0.8)),
+                url('hero-background.jpg') no-repeat center center;
+    background-size: cover;
     color: white;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Efeito de desfoque leve */
+    backdrop-filter: blur(2px); /* Desfoque aplicado */
+    z-index: 1;
+}
+
+.hero h2, .hero p, .btn {
+    position: relative;
+    z-index: 2;
 }
 
 .hero h2 {
@@ -81,6 +102,7 @@ nav ul li a:hover {
 .btn:hover {
     background: #0056b3;
 }
+
 
 /* Tipos de Seguros */
 .seguros-container {
@@ -181,7 +203,7 @@ h2 {
 /* Contacto */
 /* Fundo azul na secção de contacto */
 #contacto {
-    background: linear-gradient(to bottom, #007bff, #0056b3);
+    background: linear-gradient(to bottom, #f8f9fa, #0056b3);
     color: rgb(255, 255, 255);
     padding: 60px 20px;
     border-radius: 10px;
@@ -189,7 +211,7 @@ h2 {
 }
 
 #contacto h2 {
-    color: #007bff;
+    color: #2b3c5a;
     font-size: 28px;
     margin-bottom: 20px;
 }

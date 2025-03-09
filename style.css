@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 /* Cabeçalho */
@@ -14,19 +14,11 @@ header {
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid #f0f0f0;
-}
-
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    position: fixed;
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.logo {
-    width: 120px;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 nav ul {
@@ -38,38 +30,42 @@ nav ul {
 nav ul li a {
     text-decoration: none;
     color: #333;
-    font-size: 16px;
     font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
     color: #007bff;
 }
 
-/* Hero Section */
-.hero {
+/* Secções */
+.section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     padding: 80px 20px;
-    background: #f8f9fa;
+    background: white;
 }
 
-.hero h1 {
+/* Hero Section */
+.hero {
+    background: linear-gradient(to bottom, #007bff, #0056b3);
+    color: white;
+}
+
+.hero h2 {
     font-size: 36px;
-    color: #333;
     margin-bottom: 10px;
 }
 
 .hero p {
     font-size: 18px;
-    color: #555;
+    max-width: 800px;
     margin-bottom: 20px;
-}
-
-/* Botões */
-.button-container {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
 }
 
 .btn {
@@ -86,77 +82,28 @@ nav ul li a:hover {
     background: #0056b3;
 }
 
-.btn-outline {
-    border: 2px solid #007bff;
-    color: #007bff;
-    text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: all 0.3s;
-}
-
-.btn-outline:hover {
-    background: #007bff;
-    color: white;
-}
-
-/* Serviços */
-.services {
-    display: flex;
-    justify-content: space-around;
-    padding: 40px 20px;
-    background: white;
-    text-align: center;
-}
-
-.service img {
-    width: 50px;
-    margin-bottom: 10px;
-}
-
-.service h2 {
-    font-size: 20px;
-    color: #333;
-}
-
-.service p {
-    font-size: 16px;
-    color: #666;
-}
-
-/* Rodapé */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #f8f9fa;
-    color: #333;
-    margin-top: 20px;
-}
-
-.site-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #007bff;
-    margin-left: 20px;
-}
-
-/* Página de Seguros */
+/* Tipos de Seguros */
 .seguros-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    padding: 40px 20px;
-    text-align: center;
+    max-width: 1200px;
+    margin: 30px auto 0; /* Adiciona mais margem no topo */
+    padding-top: 20px; /* Garante um espaçamento extra */
+}
+
+h2 {
+    margin-bottom: 40px; /* Adiciona mais espaço abaixo dos títulos */
 }
 
 .seguro {
     background: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 280px;
+    text-align: center;
 }
 
 .seguro img {
@@ -164,36 +111,48 @@ footer {
     margin-bottom: 10px;
 }
 
-.seguro h2 {
-    font-size: 20px;
-    color: #333;
-}
-
-.seguro p {
-    font-size: 16px;
-    color: #666;
-}
-
-/* Melhorar o botão de voltar */
-.button-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
-/* Página Sobre Nós - Melhorando o espaçamento */
+/* Melhorias na secção Sobre Nós */
 .sobre-container {
     max-width: 900px;
     margin: 60px auto;
     padding: 40px;
     text-align: center;
-    background: white;
+    background: #f8f9fa;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.sobre-container h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.sobre-container h2 i {
+    font-size: 28px;
+    color: #0056b3;
 }
 
 .sobre-texto, .sobre-missao, .sobre-valores {
     margin-bottom: 30px;
     padding: 20px;
+}
+
+.sobre-missao {
+    font-style: italic;
+    font-size: 18px;
+}
+
+.sobre-valores {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .sobre-valores ul {
@@ -202,27 +161,54 @@ footer {
 }
 
 .sobre-valores li {
-    background: #f0f0f0;
+    background: #e9ecef;
     margin: 10px 0;
     padding: 15px;
     border-radius: 8px;
     font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-/* Página de Contacto */
-.contacto-container {
-    max-width: 800px;
-    margin: 60px auto;
-    padding: 40px;
-    text-align: center;
-    background: white;
+.sobre-valores li i {
+    color: #007bff;
+    font-size: 22px;
+}
+
+
+/* Contacto */
+/* Fundo azul na secção de contacto */
+#contacto {
+    background: linear-gradient(to bottom, #007bff, #0056b3);
+    color: rgb(255, 255, 255);
+    padding: 60px 20px;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#contacto h2 {
+    color: #007bff;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Contacto - Caixa Cinzenta */
+.contacto-info {
+    text-align: center;
+    padding: 20px;
+    background: #ececec;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .contacto-info p {
     font-size: 18px;
     margin: 10px 0;
+    color: black;
 }
 
 .contacto-info a {
@@ -235,38 +221,91 @@ footer {
     text-decoration: underline;
 }
 
-.mapa {
-    text-align: center;
+/* Mapa dentro do contacto */
+.mapa-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
 }
 
-.mapa-img {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: transform 0.3s ease;
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #f8f9fa;
+    color: #333;
+    margin-top: 20px;
 }
 
-.mapa-img:hover {
-    transform: scale(1.05);
-}
-
-/* Ajuste responsivo para o cabeçalho em telas menores */
+/* Responsividade */
 @media (max-width: 768px) {
-    .container {
+    header {
         flex-direction: column;
-        align-items: center;
         text-align: center;
-    }
-
-    .site-title {
-        margin-bottom: 10px;
     }
 
     nav ul {
         flex-direction: column;
         gap: 10px;
+        margin-top: 10px;
     }
+
+    .seguros-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Animação de entrada suave */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Botão de voltar ao topo */
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-top:hover {
+    background: #0056b3;
+}
+
+
+/* Efeito hover nos seguros */
+.seguro {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.seguro:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.section:nth-child(even) {
+    background: #f8f9fa;
+}
+
+#sobre {
+    margin-bottom: 60px; /* Dá um espaçamento extra antes do rodapé */
 }

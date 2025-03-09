@@ -274,6 +274,12 @@ h2 {
     margin-top: 20px;
 }
 
+.mapa iframe {
+    width: 100%;
+    max-width: 600px;
+}
+
+
 /* Rodapé */
 footer {
     text-align: center;

@@ -6,19 +6,40 @@
     font-family: 'Arial', sans-serif;
 }
 
-/* Cabeçalho */
+/* Cabeçalho com logotipo discreto */
 header {
-    background: white;
-    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.9);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #f0f0f0;
+    padding: 15px 20px;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logotipo no cabeçalho */
+.logo {
+    height: 40px; /* Ajusta o tamanho da imagem */
+    width: auto;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+
+/* Para alinhar o logotipo e o título "MJF SEGUROS" */
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.nav-container {
+    display: flex;
+    align-items: center;
 }
 
 nav ul {
@@ -38,6 +59,7 @@ nav ul li a {
 nav ul li a:hover {
     color: #007bff;
 }
+
 
 /* Secções */
 .section {
@@ -292,27 +314,6 @@ footer {
     transform: translateY(0);
 }
 
-/* Botão de voltar ao topo */
-.scroll-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 12px 15px;
-    border-radius: 50%;
-    font-size: 20px;
-    cursor: pointer;
-    display: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.scroll-top:hover {
-    background: #0056b3;
-}
-
 
 /* Efeito hover nos seguros */
 .seguro {
@@ -331,3 +332,22 @@ footer {
 #sobre {
     margin-bottom: 60px; /* Dá um espaçamento extra antes do rodapé */
 }
+
+/* Efeito moderno nos botões */
+.btn {
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+

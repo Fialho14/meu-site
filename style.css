@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Cabeçalho com logotipo discreto */
@@ -242,7 +242,7 @@ h2 {
 .contacto-info {
     text-align: center;
     padding: 20px;
-    background: #ececec;
+    background: #f1f3ff;
     border-radius: 10px;
     max-width: 600px;
     margin: 0 auto 20px;
